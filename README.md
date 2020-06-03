@@ -1,4 +1,23 @@
-# SavaTest
+# FE test (Team Sava / Chase)
+
+External javascript is located in node_modules/external-script/search-script.js
+Most of the logic is in src/app/api
+
+Feel free to contact me https://www.linkedin.com/in/urosciric/
+
+Thank you for the oportunity. Please provide me with feedback, it means a lot to me.
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<hr>
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6.
 
