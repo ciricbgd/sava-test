@@ -1,0 +1,57 @@
+// -------- Colors -----------------------------------------------------------
+
+$color1: #333539;
+$color2: #c3cddb;
+$color3: white;
+$color4: #d955a0;
+
+$bgcolor1: $color1;
+$bgcolor2: $color2;
+$bgcolor3: $color3;
+$bgcolor4: $color4;
+
+//!-------- Colors -----------------------------------------------------------
+
+// -------- Fonts -----------------------------------------------------------
+
+$font1: 'Roboto';
+
+//!-------- Fonts -----------------------------------------------------------
+
+// -------- Responsive design -----------------------------------------------------------
+
+$s: 320px;
+$m: 480px;
+$l: 768px;
+$xl: 1024px;
+$laptop: 1366px;
+
+@mixin above($size...) {
+  @if length($size) ==1 {
+    @media screen and (min-width: nth($size, 1)) {
+      @content;
+    }
+  }
+
+  @if length($size) ==2 {
+    @media screen and (max-width: nth($size, 2) - 0.02px) and (min-width: nth($size, 1)) {
+      @content;
+    }
+  }
+}
+
+@mixin below($size...) {
+  @if length($size) ==1 {
+    @media screen and (max-width: nth($size, 1)) {
+      @content;
+    }
+  }
+
+  @if length($size) ==2 {
+    @media screen and (max-width: nth($size, 2) - 0.02px) and (min-width: nth($size, 1)) {
+      @content;
+    }
+  }
+}
+
+//!-------- Responsive design -----------------------------------------------------------

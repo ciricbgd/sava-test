@@ -1,0 +1,57 @@
+<div class="search__area">
+  <!-- Search input -->
+  <div class="search__holder">
+    <!-- Magnify icon -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      appSvg="magnify"
+    ></svg>
+
+    <!-- Search bar -->
+    <div class="search__holder--input">
+      <p class="search__provider">Giphy</p>
+      <input
+        type="text"
+        [(ngModel)]="query"
+        (keyup)="searchInput()"
+        placeholder="Search something"
+        autocomplete="on"
+      />
+    </div>
+
+    <!-- Close icon -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="15"
+      height="16"
+      viewBox="0 0 15 16"
+      appSvg="close"
+      class="clickable"
+      (click)="product.emptySearch()"
+    ></svg>
+  </div>
+  <!-- Search results -->
+  <section class="search__results__area">
+    <hr *ngIf="product.searchResult.length != 0" />
+    <div *ngFor="let res of product.searchResult">
+      <h3 class="search__results__provider">Results from {{ res.category }}</h3>
+      <div class="search__results__items">
+        <article
+          *ngFor="let product of res.products"
+          class="search__results__item"
+        >
+          <img [src]="product.imageUrl" [alt]="product.title" />
+          <a class="search__results__item--title" href="">{{
+            product.title
+          }}</a>
+          <div class="search__results__item--tags">
+            <a *ngFor="let tag of product.tags" href="">#{{ tag }}</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</div>
